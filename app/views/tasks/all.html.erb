@@ -1,8 +1,8 @@
 <table>
-<thead><tr><td><b>Task Name</b></td><td><b>Details</b></td><td><b>Completed?</b></td></tr></thead>
+<thead><tr><td></td><td><b>Task Name</b></td><td><b>Details</b></td></tr></thead>
 <tbody>
 <% @tasks.each do |task| %>
-  <tr><td><%= task.name %></td><td><%= task.details %></td><td><%= task.completed %></td></tr>
+  <tr><td><%= check_box("completed", task.id, {checked: task.completed}) %></td><td><%= task.name %></td><td><%= task.details %></td></tr>
 <% end %>
 </tbody>
 </table>
