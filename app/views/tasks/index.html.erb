@@ -1,10 +1,11 @@
 <h2>All Tasks</h2>
+<%= link_to "Add task", new_path %>
 <table>
 <thead><tr><td></td><td><b>Task Name</b></td></tr></thead>
 <tbody>
 <% @tasks.each do |task| %>
   <tr><td><%= check_box("completed", task.id, {checked: task.completed}) %></td>
-    <td><%= link_to task.name, task_path(task) %></td></tr>
+    <td><%= link_to task.name, task_path(task) %></td><td><%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?"} %></td></tr>
 <% end %>
 </tbody>
 </table>
