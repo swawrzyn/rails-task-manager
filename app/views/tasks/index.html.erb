@@ -1,0 +1,10 @@
+<h2>All Tasks</h2>
+<table>
+<thead><tr><td></td><td><b>Task Name</b></td></tr></thead>
+<tbody>
+<% @tasks.each do |task| %>
+  <tr><td><%= check_box("completed", task.id, {checked: task.completed}) %></td>
+    <td><%= link_to task.name, task_path(task) %></td></tr>
+<% end %>
+</tbody>
+</table>
