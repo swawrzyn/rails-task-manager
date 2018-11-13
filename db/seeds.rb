@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Task.destroy_all
+
+10.times do
+  t = Task.new(name: Faker::WorldOfWarcraft.hero, details: Faker::WorldOfWarcraft.quote)
+  t.save
+  p "Created task: #{t.name} - #{t.details}"
+end
